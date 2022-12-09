@@ -54,7 +54,7 @@ jobs:
         uses: "johnwbyrd/update-release@v1.0.0"
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
-          tag: "latest"
-          release: "Latest Build"
+          tag: "nightly"
+          release: "Nightly (built from current main branch)"
           prerelease: true
           files: ${{ env.out_path }}
