@@ -43,10 +43,10 @@ jobs:
           if [ "${{ matrix.target }}" == "win-x64" ]; then
             # Pack to zip for Windows
             7z a -tzip "${release_name}.zip" "./${release_name}/*"
-            echo "::set-env name=out_path::${release_name}.zip"
+            echo "name=out_path::${release_name}.zip" >> $GITHUB_ENV
           else  
           tar czvf "${release_name}.tar.gz" "$release_name"
-          echo "::set-env name=out_path::${release_name}.tar.gz"
+          echo "name=out_path::${release_name}.tar.gz" >> $GITHUB_ENV
           fi
           # Delete output directory
           rm -r "$release_name"
