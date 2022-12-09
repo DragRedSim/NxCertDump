@@ -34,7 +34,7 @@ jobs:
       - name: Build
         shell: bash
         run: |
-          tag=$(git describe --tags --abbrev=0)
+
           git_branch=${GITHUB_REF##*/}
           release_name="NxCertDump-$git_branch-${{ matrix.target }}"
           # Build everything
